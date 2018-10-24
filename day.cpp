@@ -9,7 +9,7 @@
 
 #include "day.h"
 
-/* --- methods --- */
+/* --- Methods --- */
 Day::Day() {
   sum = 0;
   max = 0;
