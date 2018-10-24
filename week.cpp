@@ -4,15 +4,16 @@
   Desc: COSC_2030 Project #1; Blood Sugar
         day.cpp
 
-  This is the driver class for day.h
+  This is the driver class for week.h
 */
 
-#include "day.h"
+#include "week.h"
 
-/* --- methods --- */
-Day::Day() {
+/* --- Methods --- */
+Week::Week() {
   sum = 0;
   max = 0;
   min = 0;
   count = 0;
+  delta = 0;
 }

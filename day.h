@@ -1,4 +1,3 @@
-
 /*
   Date: 10/24/18
   Name: Devin Brewer
@@ -15,10 +14,10 @@
 class Day {
 // NOTE: Currently security is not a concern, all variables will be defined as public instead of using getters and setters
 public:
-    // Define all the methods
+    /* --- Methods --- */
     Day();  // Default constructor
 
-    // Define all the variables
+    /* --- Variables --- */
     int sum;  // Stores the running sum of numbers entered. TODO: Overflow
     int max;  // Stores the largest number entered
     int min;  // Stores the smallest number entered
