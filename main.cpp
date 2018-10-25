@@ -19,7 +19,6 @@ int main() {
   Week weekArray[2];
   short weekIndex = 0;
 
-  //TODO: User interaction
   // Output relevant information to the user
   cout << "Controls:" << endl;
   cout << "D - Show current daily summary" << endl;
@@ -46,7 +45,6 @@ int main() {
 
     } else if (input.compare("D") == 0 || input.compare("d") == 0) {
       // Daily summary
-      //dayArray[dayIndex].summary();
       weekArray[weekIndex].dayArray[weekArray[weekIndex].dayIndex].summary();
 
     } else if (input.compare("W") == 0 || input.compare("w") == 0) {
