@@ -29,9 +29,9 @@ int main() {
 
   // Continuously gather input from the user
   string input = "a";
-  while (input != "Q" && input != "q") {
+  while (input != "Q" && input != "q" && weekIndex != 2) {
     // Get input from the user
-    cout << "Week: " << weekIndex << " Day: " << weekArray[weekIndex].dayIndex << " data: ";
+    cout << "Week: " << (weekIndex+1) << " Day: " << (weekArray[weekIndex].dayIndex+1) << " data: ";
     cin >> input;
 
     // Parse the input based on character or numeric interaction
@@ -54,14 +54,12 @@ int main() {
       weekArray[weekIndex].summary();
 
     } else if (input.compare("N") == 0 || input.compare("n") == 0) {
-      if (weekIndex != 2) {
-        // Update the dayIndex
-        weekArray[weekIndex].dayIndex++;
+      // Update the dayIndex
+      weekArray[weekIndex].dayIndex++;
 
-        // If the current weeks dayIndex = 7 switch to the next week
-        if (weekArray[weekIndex].dayIndex == 7) {
-          weekIndex++;
-        }
+      // If the current weeks dayIndex = 7 switch to the next week
+      if (weekArray[weekIndex].dayIndex == 7) {
+        weekIndex++;
       }
     } else {
       // No catch case, invalid input
