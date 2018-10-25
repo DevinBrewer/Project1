@@ -10,24 +10,19 @@
 
 // Add the necessary imports
 #include <iostream>
+#include <string>
 using namespace std;
 
 // Include the day class
 #include "day.h"
+#include "week.h"
 
 int main() {
   // Define the main variables to be used
   Day dayArray[14];
+  short dayIndex = 0;
   Week weekArray[2];
-
-  // Create a day and test it
-  Day d;
-
-  d.sum = 10;
-  d.max += 10;
-
-  cout << d.sum << endl;
-  cout << d.max << endl;
+  short weekIndex = 0;
 
   //TODO: User interaction
   // Output relevant information to the user
@@ -38,16 +33,33 @@ int main() {
   cout << "Q - Prematurely quit (NOTE: All data will be lost)" << endl;
 
   // Continuously gather input from the user
-  char charInput = '';
-  while (toupper(charInput) != 'Q') {
-      int intInput = 0;
+  string input = "a";
+  while (input != "Q" && input != "q") {
+    // Get input from the user
+    cin >> input;
 
-      cin >> charInput;
-      cin >> intInput;
+    // Parse the input based on character or numeric interaction
+    char* sz;
+    long convInput = strtol(input.c_str(), &sz, 10);
 
-      cout << "charInput: " << charInput << endl;
-      cout << "intInput: " << intInput << endl;
+    if (!*sz) {
+      // Input is an integer
+      
+    } else if (input.compare("D") == 0 || input.compare("d") == 0) {
+      // Daily summary
+
+    } else if (input.compare("W") == 0 || input.compare("w") == 0) {
+      // Weekly summary
+
+    } else if (input.compare("N") == 0 || input.compare("n") == 0) {
+      // Next day
+
+    } else {
+      // No catch case, invalid input
+      cout << "Invalid input..." << endl;
+    }
   }
 
+  cout << "Completed" << endl;
   return 0;
 }
