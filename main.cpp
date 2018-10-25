@@ -44,15 +44,25 @@ int main() {
 
     if (!*sz) {
       // Input is an integer
-      
+
     } else if (input.compare("D") == 0 || input.compare("d") == 0) {
       // Daily summary
+      dayArray[dayIndex].summary();
 
     } else if (input.compare("W") == 0 || input.compare("w") == 0) {
       // Weekly summary
+      weekArray[weekIndex].summary();
 
     } else if (input.compare("N") == 0 || input.compare("n") == 0) {
       // Next day
+      if (dayIndex < 13) {
+        dayIndex++;
+      }
+
+      // Check if week needs to be advanced
+      if (dayIndex == 7) {
+        weekIndex++;
+      }
 
     } else {
       // No catch case, invalid input

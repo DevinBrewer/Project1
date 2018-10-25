@@ -10,18 +10,22 @@
 #ifndef DAY_h_
 #define DAY_h_
 
+#include <iostream>
+using namespace std;
+
 // Create the class
 class Day {
 // NOTE: Currently security is not a concern, all variables will be defined as public instead of using getters and setters
 public:
-    /* --- Methods --- */
-    Day();  // Default constructor
+  /* --- Methods --- */
+  Day();  // Default constructor
+  void summary();  // Outputs a daily summary
 
-    /* --- Variables --- */
-    int sum;  // Stores the running sum of numbers entered. TODO: Overflow
-    int max;  // Stores the largest number entered
-    int min;  // Stores the smallest number entered
-    int count;  // Stores the total count of numbers entered
+  /* --- Variables --- */
+  int sum;  // Stores the running sum of numbers entered. TODO: Overflow
+  int max;  // Stores the largest number entered
+  int min;  // Stores the smallest number entered
+  int count;  // Stores the total count of numbers entered
 };
 
 #endif

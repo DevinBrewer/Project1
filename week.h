@@ -10,12 +10,16 @@
 #ifndef WEEK_h_
 #define WEEK_h_
 
+#include <iostream>
+using namespace std;
+
 // Create the class
 class Week {
 // NOTE: Security is currently not a concern, thus all variables and methods will be defined publicly instead of using getters and setters
 public:
   /* --- Methods --- */
   Week(); // Default constructor
+  void summary(); // Outputs a weekly summary
 
   /* --- Variables --- */
   int sum;  // Stores the sum of the 7 days in a week. TODO: Overflow

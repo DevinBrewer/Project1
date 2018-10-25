@@ -16,3 +16,10 @@ Day::Day() {
   min = 0;
   count = 0;
 }
+
+void Day::summary() {
+  cout << "The daily sum so far is: " << sum << endl;
+  cout << "The daily max so far is: " << max << endl;
+  cout << "The daily min so far is: " << min  << endl;
+  cout << "The number of readings so far is: " << count << endl;
+}
