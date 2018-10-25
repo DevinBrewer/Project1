@@ -24,6 +24,7 @@ public:
 
   /* --- Variables --- */
   int sum;  // Stores the running sum of numbers entered
+  int overflowCounter;  // Stores the amount of times sum overflows
   int max;  // Stores the largest number entered
   int min;  // Stores the smallest number entered
   int count;  // Stores the total count of numbers entered

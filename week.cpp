@@ -12,6 +12,7 @@
 /* --- Methods --- */
 Week::Week() {
   sum = 0;
+  overflowCounter = 0;
   max = INT_MIN;
   min = INT_MAX;
   count = 0;
@@ -31,7 +32,14 @@ void Week::update(int data) {
   dayArray[dayIndex].update(data);  // Update the dataArray
 
   // Update the value for the weekly readings
-  sum += data;  // TODO: Overflow
+  // Make sure sum doesnt overflow
+  if (sum > (INT_MAX - data)) {
+    // Dont add to sum, it will overflow
+    overflowCounter++;
+    sum = data - (INT_MAX - sum);
+  }
+
+
   if (max < data) max = data;
   if (min > data) min = data;
   count++;

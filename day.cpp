@@ -12,6 +12,7 @@
 /* --- Methods --- */
 Day::Day() {
   sum = 0;
+  overflowCounter = 0;
   max = INT_MIN;
   min = INT_MAX;
   count = 0;
@@ -25,7 +26,15 @@ void Day::summary() {
 }
 
 void Day::update(int data) {
-  sum += data;  // TODO: Overflow
+  // Update the daily readings
+  // Make sure sum doesnt overflow
+  if (sum > (INT_MAX - data)) {
+    // Dont add to sum, it will overflow
+    overflowCounter++;
+    sum = data - (INT_MAX - sum);
+  }
+
+
   if (max < data) max = data;
   if (min > data) min = data;
   count++;

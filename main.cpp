@@ -67,6 +67,6 @@ int main() {
     }
   }
 
-  cout << "Completed" << endl;
+  cout << "Completed successfully" << endl;
   return 0;
 }

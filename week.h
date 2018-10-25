@@ -22,7 +22,8 @@ public:
   void update(int data);  // Updates the weekly summary based off data
 
   /* --- Variables --- */
-  int sum;  // Stores the sum of the 7 days in a week. TODO: Overflow
+  int sum;  // Stores the sum of the 7 days in a week
+  int overflowCounter;  //Stores the amount of times sum overflows
   int max;  // Stores the largest number of all readings
   int min;  // Stores the smallest number of all readings
   int count;  // Stores the total count of blood sugar readings
