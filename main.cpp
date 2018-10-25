@@ -9,18 +9,13 @@
 */
 
 // Add the necessary imports
-#include <iostream>
 #include <string>
-using namespace std;
 
 // Include the day class
-#include "day.h"
 #include "week.h"
 
 int main() {
   // Define the main variables to be used
-  Day dayArray[14];
-  short dayIndex = 0;
   Week weekArray[2];
   short weekIndex = 0;
 
@@ -36,6 +31,7 @@ int main() {
   string input = "a";
   while (input != "Q" && input != "q") {
     // Get input from the user
+    cout << "Week: " << weekIndex << " Day: " << weekArray[weekIndex].dayIndex << " data: ";
     cin >> input;
 
     // Parse the input based on character or numeric interaction
@@ -44,26 +40,29 @@ int main() {
 
     if (!*sz) {
       // Input is an integer
+      if (convInput > 0) {
+        weekArray[weekIndex].update(convInput);
+      }
 
     } else if (input.compare("D") == 0 || input.compare("d") == 0) {
       // Daily summary
-      dayArray[dayIndex].summary();
+      //dayArray[dayIndex].summary();
+      weekArray[weekIndex].dayArray[weekArray[weekIndex].dayIndex].summary();
 
     } else if (input.compare("W") == 0 || input.compare("w") == 0) {
       // Weekly summary
       weekArray[weekIndex].summary();
 
     } else if (input.compare("N") == 0 || input.compare("n") == 0) {
-      // Next day
-      if (dayIndex < 13) {
-        dayIndex++;
-      }
+      if (weekIndex != 2) {
+        // Update the dayIndex
+        weekArray[weekIndex].dayIndex++;
 
-      // Check if week needs to be advanced
-      if (dayIndex == 7) {
-        weekIndex++;
+        // If the current weeks dayIndex = 7 switch to the next week
+        if (weekArray[weekIndex].dayIndex == 7) {
+          weekIndex++;
+        }
       }
-
     } else {
       // No catch case, invalid input
       cout << "Invalid input..." << endl;

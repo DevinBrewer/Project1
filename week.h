@@ -10,8 +10,7 @@
 #ifndef WEEK_h_
 #define WEEK_h_
 
-#include <iostream>
-using namespace std;
+#include "day.h"
 
 // Create the class
 class Week {
@@ -20,6 +19,7 @@ public:
   /* --- Methods --- */
   Week(); // Default constructor
   void summary(); // Outputs a weekly summary
+  void update(int data);  // Updates the weekly summary based off data
 
   /* --- Variables --- */
   int sum;  // Stores the sum of the 7 days in a week. TODO: Overflow
@@ -27,6 +27,9 @@ public:
   int min;  // Stores the smallest number of all readings
   int count;  // Stores the total count of blood sugar readings
   int delta;  // Stores the largest change of readings; int as day of week
+
+  Day dayArray[7];  // Holds every day for a week
+  short dayIndex; // Holds the index to iterate over the dayArray
 };
 
 #endif

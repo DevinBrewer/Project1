@@ -12,8 +12,8 @@
 /* --- Methods --- */
 Day::Day() {
   sum = 0;
-  max = 0;
-  min = 0;
+  max = INT_MIN;
+  min = INT_MAX;
   count = 0;
 }
 
@@ -22,4 +22,11 @@ void Day::summary() {
   cout << "The daily max so far is: " << max << endl;
   cout << "The daily min so far is: " << min  << endl;
   cout << "The number of readings so far is: " << count << endl;
+}
+
+void Day::update(int data) {
+  sum += data;  // TODO: Overflow
+  if (max < data) max = data;
+  if (min > data) min = data;
+  count++;
 }

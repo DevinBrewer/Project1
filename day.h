@@ -20,9 +20,10 @@ public:
   /* --- Methods --- */
   Day();  // Default constructor
   void summary();  // Outputs a daily summary
+  void update(int data);  // Updates the daily summary based off data
 
   /* --- Variables --- */
-  int sum;  // Stores the running sum of numbers entered. TODO: Overflow
+  int sum;  // Stores the running sum of numbers entered
   int max;  // Stores the largest number entered
   int min;  // Stores the smallest number entered
   int count;  // Stores the total count of numbers entered
