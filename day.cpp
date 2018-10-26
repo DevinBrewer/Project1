@@ -19,7 +19,7 @@ Day::Day() {
 }
 
 void Day::summary() {
-  cout << "The daily sum so far is: " << sum << endl;
+  cout << "The daily sum so far is: " << INT_MAX << "*" << overflowCounter << "+" << sum << endl;
   cout << "The daily max so far is: " << max << endl;
   cout << "The daily min so far is: " << min  << endl;
   cout << "The number of readings so far is: " << count << endl;
