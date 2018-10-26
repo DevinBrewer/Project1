@@ -21,7 +21,7 @@ Week::Week() {
 }
 
 void Week::summary() {
-  cout << "The weekly sum so far is: " << sum << endl;
+  cout << "The weekly sum so far is: " << INT_MAX << "*" << overflowCounter << "+" << sum << endl;
   cout << "The weekly max so far is: " << max << endl;
   cout << "The weekly min so far is: " << min << endl;
   cout << "The number of readings so far is: " << count << endl;
